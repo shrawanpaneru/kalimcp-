@@ -6,7 +6,36 @@ This project provides an AI-powered agent with full control over both a
 Kali Linux environment (via Docker) and your local Windows host system.
 
 --------------------------------------------------------------------------------
-1. PREREQUISITES
+1. MINIMUM REQUIREMENTS
+--------------------------------------------------------------------------------
+* DISK SPACE: At least 60 GB free (Kali + Models + Tools).
+* RAM: 16 GB Recommended (to run Docker + LM Studio + Python Agent).
+* GPU: NVIDIA/AMD GPU recommended for LM Studio (but CPU works).
+* OS: Windows 10/11 with Docker Desktop installed.
+
+--------------------------------------------------------------------------------
+1. INSTALLATION (How to set up from scratch)
+--------------------------------------------------------------------------------
+1. INSTALL DOCKER:
+   - Download and install Docker Desktop for Windows.
+   - Ensure it is RUNNING before starting the agent.
+
+2. INSTALL LM STUDIO:
+   - Run: `winget install ElementLabs.LMStudio` in your terminal.
+   - Open the app, search for "Hermes-3", and download it.
+
+3. SET UP PROJECT:
+   - Open a terminal in this folder.
+   - Build the Kali image: 
+     & "C:\Program Files\Docker\Docker\resources\bin\docker.exe" build -t kali-mcp .
+   - Install Python dependencies:
+     pip install mcp httpx ollama
+
+4. PULL OLLAMA MODELS (Optional fallback):
+   - Run: `ollama pull hermes3`
+
+--------------------------------------------------------------------------------
+2. PREREQUISITES
 --------------------------------------------------------------------------------
 * Docker Desktop: Must be running. (Image: kali-mcp)
 * LM Studio: 
@@ -43,3 +72,4 @@ launch the Unrestricted Agent session.
 --------------------------------------------------------------------------------
 HAPPY HACKING! (Authorized security testing only)
 --------------------------------------------------------------------------------
+
